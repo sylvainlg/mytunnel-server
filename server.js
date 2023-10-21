@@ -26,6 +26,10 @@ export default function(opt) {
     const app = new Koa();
     const router = new Router();
 
+    router.get('/', async (ctx, next) => {
+        ctx.body = "ok";
+    });
+
     router.get('/api/status', async (ctx, next) => {
         ctx.body = {
             tunnelsCount: manager.stats.tunnels,
